@@ -150,6 +150,20 @@ class patternPrinter {
 
         }
     }
+
+    // This is pattern of Solid Rhombus
+    public static void solidRhombus(int n) {
+        for (int row = n; row > 0; row--) {
+            for (int col = 1; col <= row - 1; col++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= n; col++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+
+        }
+    }
 }
 
 class patterns {
@@ -240,6 +254,11 @@ class patterns {
                 case 10: {
                     int n = getInput(sc, "Enter the number of lines: ");
                     patternPrinter.butterfly(n);
+                    break;
+                }
+                case 11: {
+                    int n = getInput(sc, "Enter the number of lines: ");
+                    patternPrinter.solidRhombus(n);
                     break;
                 }
                 default: {
