@@ -164,6 +164,53 @@ class patternPrinter {
 
         }
     }
+
+    // This is pattern of hollow Rhombus
+    public static void hollowRhombus(int n) {
+        for (int row = n; row > 0; row--) {
+            for (int col = 1; col <= row - 1; col++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= n; col++) {
+                if (row == 1 || row == n || col == 1 || col == n) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println("");
+
+        }
+    }
+
+    // This is pattern of diamond
+    public static void diamond(int n) {
+
+        // upper portion
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= n - row; col++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= 2 * (row - 1) + 1; col++) {
+                System.out.print("*");
+
+            }
+            System.out.println("");
+
+        }
+        // upper portion
+        for (int row = n; row > 0; row--) {
+            for (int col = 1; col <= n - row; col++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= 2 * (row - 1) + 1; col++) {
+                System.out.print("*");
+
+            }
+            System.out.println("");
+
+        }
+    }
 }
 
 class patterns {
@@ -259,6 +306,16 @@ class patterns {
                 case 11: {
                     int n = getInput(sc, "Enter the number of lines: ");
                     patternPrinter.solidRhombus(n);
+                    break;
+                }
+                case 12: {
+                    int n = getInput(sc, "Enter the number of lines: ");
+                    patternPrinter.hollowRhombus(n);
+                    break;
+                }
+                case 13: {
+                    int n = getInput(sc, "Enter the number of lines: ");
+                    patternPrinter.diamond(n);
                     break;
                 }
                 default: {
