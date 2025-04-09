@@ -60,6 +60,96 @@ class patternPrinter {
             System.out.println("");
         }
     }
+
+    // This is pattern of Inverted and Rotated Pyramid
+    public static void invertedRotatedPyramid(int n) {
+
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= n; col++) {
+                if (col > (n - row)) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println("");
+        }
+    }
+
+    // This is pattern of Inverted half Pyramid with Numbers
+    public static void invertedhalfPyramidNumbers(int n) {
+
+        for (int row = 0; row < n; row++) {
+            for (int col = 1; col <= (n - row); col++) {
+                System.out.print(col);
+            }
+            System.out.println("");
+
+        }
+    }
+
+    // This is pattern of Floyd's Triangle with Numbers
+    public static void floydsTriangleWithNumbers(int n) {
+        int num = 1;
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= row; col++) {
+                System.out.print(num + " ");
+                num++;
+            }
+            System.out.println("");
+
+        }
+    }
+
+    // This is pattern of Zero One Triangle
+    public static void zeroOneTriangle(int n) {
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= row; col++) {
+                if ((row + col) % 2 == 0) {
+                    System.out.print(1);
+                } else {
+                    System.out.print(0);
+
+                }
+
+            }
+            System.out.println("");
+
+        }
+    }
+
+    // This is pattern of Butterfly
+    public static void butterfly(int n) {
+
+        // for upper part
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= row; col++) {
+                System.out.print("*");
+            }
+            for (int col = 1; col <= (2 * (n - row)); col++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= row; col++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+
+        }
+        // for lower part
+        for (int row = n; row > 0; row--) {
+            for (int col = 1; col <= row; col++) {
+                System.out.print("*");
+            }
+            for (int col = 1; col <= (2 * (n - row)); col++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= row; col++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+
+        }
+    }
 }
 
 class patterns {
@@ -81,7 +171,16 @@ class patterns {
             System.out.println("3. Half-Pyramids with Numbers");
             System.out.println("4. Half-Pyramids with Characters");
             System.out.println("5. Hollow Rectangle");
-            System.out.print("Choose a pattern (1-9) or 0 to EXIT: ");
+            System.out.println("6. Inverted and rotated Pyramid");
+            System.out.println("7. Inverted Half Pyramid with Numbers");
+            System.out.println("8. Floyd's Triangle with Numbers");
+            System.out.println("9. Zero One Triangle");
+            System.out.println("10. Butterfly");
+            System.out.println("11. Solid Rhombus");
+            System.out.println("12. Hollow Rhombus");
+            System.out.println("13. Diamond");
+
+            System.out.print("Choose a pattern (1-13) or 0 to EXIT: ");
             choice = sc.nextInt();
 
             if (choice == 0) {
@@ -116,6 +215,31 @@ class patterns {
                     System.out.print("Enter the number of columns: ");
                     int col = sc.nextInt();
                     patternPrinter.hollowRectangle(col, row);
+                    break;
+                }
+                case 6: {
+                    int n = getInput(sc, "Enter the number of lines: ");
+                    patternPrinter.invertedRotatedPyramid(n);
+                    break;
+                }
+                case 7: {
+                    int n = getInput(sc, "Enter the number of lines: ");
+                    patternPrinter.invertedhalfPyramidNumbers(n);
+                    break;
+                }
+                case 8: {
+                    int n = getInput(sc, "Enter the number of lines: ");
+                    patternPrinter.floydsTriangleWithNumbers(n);
+                    break;
+                }
+                case 9: {
+                    int n = getInput(sc, "Enter the number of lines: ");
+                    patternPrinter.zeroOneTriangle(n);
+                    break;
+                }
+                case 10: {
+                    int n = getInput(sc, "Enter the number of lines: ");
+                    patternPrinter.butterfly(n);
                     break;
                 }
                 default: {
